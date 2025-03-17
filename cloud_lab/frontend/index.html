@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JOLIKAL</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      async function joli_veno() {
+        try {
+          const response = await fetch("http://localhost:8000/jobs");
+          const jobs = await response.json();
+
+          const jobsList = document.getElementById("jobs-list");
+
+          jobs.forEach((job) => {
+            const jobDiv = document.createElement("div");
+            jobDiv.className = "job";
+            jobDiv.innerHTML = `<h3>${job.title}</h3><p>${job.company}</p>`;
+            jobsList.appendChild(jobDiv);
+          });
+        } catch (error) {
+          console.error("Failed to fetch jobs:", error);
+        }
+      }
+
+      joli_veno();
+    </script>
+  </head>
+  <body class="background">
+    <h1>JOB VENO!!!</h1>
+    <div id="jobs-list" class="container"></div>
+
+    <footer>
+      <p>© NO rights reserved.</p>
+    </footer>
+  </body>
+</html>
