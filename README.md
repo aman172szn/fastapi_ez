@@ -1,0 +1,1 @@
+to view the page, there is no requirements.txt for quick installation, manually install fastapi uvicorn follow link, and try "/jobs" if the data is viewable, run index.html in a web browsser to view. for queries. ping "skedush1790" at discord
